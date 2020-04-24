@@ -23,11 +23,11 @@ public class ArrayDemo {
 
         MyArr myArr = new MyArr();
         for (Object o: myArr){
-
+            System.out.println(o);
         }
 
         for (int i=0; i<5; i++) {
-             for (int j = 0; j < 10; j++) {
+            for (int j = 0; j < 10; j++) {
                 if (j == 5) {
 //                    break MyLabel;
 //                    return;
@@ -36,7 +36,6 @@ public class ArrayDemo {
                 }
                 System.out.println(i + " - " + j);
             }
-
         }
         System.out.println("Программа завершена");
     }
@@ -64,7 +63,7 @@ class MyArr implements Iterable {
             @Override
             public Object next() {
                 System.out.println("next");
-                return null;
+                return count;
             }
         };
     }

@@ -10,11 +10,12 @@ public class ExceptionDemo {
     static Exception exception;
     static String result;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws RuntimeException {
         A a = new A(new C());
         try {
             result = a.doSome();
         } catch (IOException e) {
+//            throw new RuntimeException(e);
             exception = e;
             result = "IO Exception";
         } catch (Exception e) {
@@ -22,7 +23,8 @@ public class ExceptionDemo {
             result = "Some Exception";
         } finally {
 //            RuntimeException newEx = new RuntimeException();
-//            newEx.addSuppressed(exception);
+//            newEx.addSuppressed(null);
+//            newEx.addSuppressed(new RuntimeException("exception"));
 //            throw newEx;
             System.out.println("finally block");
         }
